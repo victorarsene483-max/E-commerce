@@ -32,8 +32,6 @@ const productColors = {
         { name: 'Blue', hex: '#3b5f8a', image: 'dress-blue.jpg' }
     ]
 };
-
-// Default colors for products not explicitly defined
 const defaultColors = [
     { name: 'Black', hex: '#1a1a1a' },
     { name: 'White', hex: '#f5f5f5' },
@@ -297,8 +295,6 @@ function openCheckoutModal() {
         display: flex; align-items: center; justify-content: center;
         padding: 20px; backdrop-filter: blur(4px);
     `;
-
-    // Build items HTML
     const itemsHTML = cart.map(item => `
         <div style="display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid #e0e0e0;">
             <div style="width: 14px; height: 14px; border-radius: 50%; background: ${item.colorHex}; border: 1px solid #ccc;"></div>
@@ -316,7 +312,6 @@ function openCheckoutModal() {
             max-height: 90vh; overflow-y: auto; box-shadow: 0 25px 50px rgba(0,0,0,0.25);
             display: grid; grid-template-columns: 1fr 1fr;
         ">
-            <!-- LEFT: Order Summary -->
             <div style="padding: 32px; background: #f8f8f8; border-radius: 16px 0 0 16px;">
                 <h2 style="margin: 0 0 20px 0; font-size: 20px; font-weight: 700;">Order Summary</h2>
                 <div style="margin-bottom: 20px;">
@@ -872,3 +867,19 @@ function showToast(message) {
         setTimeout(() => toast.remove(), 300);
     }, 3000);
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.querySelector('.hero-bg video');
+    if (video) {
+        video.muted = true;
+        video.play().catch(err => {
+            console.log('Autoplay blocked:', err);
+        });
+    }
+});
+
+document.addEventListener('touchstart', () => {
+    const video = document.querySelector('.hero-bg video');
+    if (video && video.paused) {
+        video.play();
+    }
+}, { once: true });
