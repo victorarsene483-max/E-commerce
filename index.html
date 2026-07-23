@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="commerce.css">
+    <link rel="stylesheet" href="eastside_enhanced.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Code_With_Arsene</title>
+<base target="_blank">
+<base target="_blank">
+</head>
+<body>
+    <div class="announcement-bar">
+        GET 15% OFF YOUR FIRST ORDER WITH CODE <strong onclick="copyPromoCode()" style="cursor:pointer;text-decoration:underline;">FIRST15</strong>
+    </div>
+    <nav class="navbar-top">
+        <div class="nav-logo">
+            <span class="logo-text">East <span class="logo-accent">Side</span></span>
+        </div>
+        <div class="nav-search">
+          <i class="ti ti-search"></i> 
+          <input type="text" id="searchInputNav" placeholder="What are you looking for?">
+          <button class="search-img-btn"> <i class="ti ti-camera"></i></button>
+        </div>
+        <div class="nav-actions">
+            <button class="sell-btn">
+                <i class="ti ti-tag"></i>Sell your items
+            </button>
+            <button class="signin-btn">
+                <i class="ti ti-user"></i>
+                <span>Sign In/Sign Up</span>
+            </button>
+            <button class="icon-action-btn">
+                <i class="ti ti-heart"></i>
+            </button>
+            <button class="icon-action-btn">
+                <i class="ti ti-heart"></i>
+            </button>
+            <button class="icon-action-btn cart-btn" onclick="toggleCart()">
+                <i class="ti ti-shopping-bag"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+    </nav>
+   <nav class="navbar-bottom">
+    <div class="nav-categories">
+        <div class="nav-item dropdown">
+            MENS <i class="ti ti-chevron-down"></i>
+            <div class="dropdown-menu">
+                <a href="#">Tops</a>
+                <a href="#">Caps</a>
+                <a href="#">Jackets</a>
+                <a href="#">Sneakers</a>
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            WOMEN <i class="ti ti-chevron-down"></i>
+            <div class="dropdown-menu">
+                <a href="#">Dresses</a>
+                <a href="#">Tops</a>
+                <a href="#">Bottoms</a>
+                <a href="#">Shoes</a>
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            JEANS <i class="ti ti-chevron-down"></i>
+            <div class="dropdown-menu">
+                <a href="#">Skinny</a>
+                <a href="#">Straight</a>
+                <a href="#">Wide Leg</a>
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            FOOTWEAR <i class="ti ti-chevron-down"></i>
+            <div class="dropdown-menu">
+                <a href="#">Sneakers</a>
+                <a href="#">Boots</a>
+                <a href="#">Sandals</a>
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            BRANDS <i class="ti ti-chevron-down"></i>
+            <div class="dropdown-menu">
+                <a href="#">Nike</a>
+                <a href="#">Adidas</a>
+                <a href="#">New Balance</a>
+                <a href="#">Calvin Klein</a>
+            </div>
+        </div>
+        <div class="nav-item dropdown">
+            VINTAGE <i class="ti ti-chevron-down"></i>
+            <div class="dropdown-menu">
+                <a href="#">90s</a>
+                <a href="#">80s</a>
+                <a href="#">70s</a>
+            </div>
+        </div>
+        <div class="nav-item sale dropdown">
+            SALE <i class="ti ti-chevron-down"></i>
+            <div class="dropdown-menu">
+                <a href="#">Up to 50% off</a>
+                <a href="#">Up to 70% off</a>
+                <a href="#">Clearance</a>
+            </div>
+        </div>
+    </div>
+<div class="nav-secondary">
+        <a href="#">SUSTAINABILITY</a>
+        <a href="#">ABOUT US</a>
+        <a href="#" class="ask-btn">
+            <i class="ti ti-sparkles"></i> ASK EASTSIDE
+        </a>
+    </div>
+   </nav> 
+   <section class="hero">
+    <div class="hero-bg">
+        <video autoplay muted loop playsinline preload="auto">
+    <source src="Video/fashion.mp4" type="video/mp4">
+</video>
+        </div>
+        <div class="hero-overlay-card">
+            <h1>15% Off Your <br>First Order</h1>
+            <p>With Code <strong class="promo-code" onclick="copyCode()" style="cursor:pointer;">FIRST15 <i class="ti ti-copy"></i></strong></p>
+            <button class="hero-btn-outline" onclick="shopWomen()">Shop Women</button>
+            <button class="hero-btn-outline" onclick="shopMen()">Shop Men</button>
+    </div>
+   </section>
+   <section class="orange-banner">
+    <div class="banner-content">
+        <h2>UP TO 70% <br>OFF RETAIL PRICE</h2>
+        <p>Thousands of quality checked items for a fraction of the price.</p>
+        <div class="banner-btns">
+            <button class="banner-btn-dark">Shop Women</button>
+            <button class="banner-btn-dark">Shop Men</button>
+        </div>
+    </div>
+   </section>
+   <section class="categories" id="categories">
+    <div class="section-header">
+        <h2>Shop by Category</h2>
+        <p>Find exactly what you are looking for</p>
+    </div>
+    <div class="category-grid">
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?w=400&q=80" alt="Women">
+            <div class="category-overlay">
+                <h3>Women</h3>
+                <span>320 items</span>
+            </div>
+        </div>
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=400&q=80" alt="Men">
+            <div class="category-overlay">
+                <h3>Men</h3>
+                <span>210 items</span>
+            </div>
+        </div>
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=400&q=80" alt="Kids">
+            <div class="category-overlay">
+                <h3>Kids</h3>
+                <span>180 items</span>
+            </div>
+</div>
+        <div class="category-card">
+            <img src="images/accessory.webp" alt="Accessories">
+            <div class="category-overlay">
+                <h3>Accessories</h3>
+                <span>140 items</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="products" id="shop">
+    <div>
+     <h2>Featured Products</h2>
+     <p>Handpicked pieces just for you</p>
+    </div>
+    <div class="filter-btns">
+        <button class="filter-btn active" data-filter="all">ALL</button>
+        <button class="filter-btn" data-filter="women">WOMEN</button>
+        <button class="filter-btn" data-filter="men">MEN</button>
+        <button class="filter-btn" data-filter="kids">KIDS</button>
+        <button class="filter-btn" data-filter="accesories">Accessories</button>
+    </div>
+    <div class="product-grid" id="productGrid">
+        <div class="product-card" data-category="Men">
+            <div class="product-img-wrap">
+                <img src="images/varsity jacket.webp" alt="Denim Jacket">
+                <button class="wishlist-btn"><i class="ti ti-heart"></i></button>
+                <span class="product-badge">Sale</span>
+            </div>
+            <div class="product-info">
+                <h3>Classic Denim Jacket</h3>
+                <p class="product-category">Men</p>
+                <div class="product-price">
+                    <span class="price">ksh 1200</span>
+                    <span class="original-price">ksh 3500</span>
+                </div>
+                <button class="add-cart-btn" onclick="addToCart('Classic Denim Jacket', 3500, event)">
+                   <i class="ti ti-shopping-cart"></i> Add to Cart 
+                </button>
+            </div>
+        </div>
+        <div class="product-card" data-category="Sneakers">
+            <div class="product-img-wrap">
+                <img src="images/jordan.webp" alt="Sneakers">
+                <button class="wishlist-btn"><i class="ti ti-heart"></i></button>
+            </div>
+            <div class="product-info">
+                <h3>Sneakers</h3>
+                <p class="product-category">Men</p>
+                <div class="product-price">
+                    <span class="price">ksh 950</span>
+                    <span class="original-price">ksh 2800</span>
+                </div>
+                <button class="add-cart-btn" onclick="addToCart('Vintage Blazer', 950, event)">
+                    <i class="ti ti-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+        <div class="product-card" data-category="men">
+    <div class="product-img-wrap">
+        <img src="images/brookyln.avif" alt="Hoodie">
+        <button class="wishlist-btn"><i class="ti ti-heart"></i></button>
+    </div>
+    <div class="product-info">
+        <h3>Hoodies</h3>
+        <p class="product-category">Men</p>
+        <p class="product-quantity">Available in stock: 50</p>
+        <div class="product-price">
+            <span class="price">KSh 2,000</span>
+            <span class="original-price">KSh 3,500</span>
+        </div>
+        <button class="add-cart-btn" onclick="addToCart('Hoodies', 2000)">
+            <i class="ti ti-shopping-cart"></i> Add to Cart
+        </button>
+    </div>
+</div>
+
+<div class="product-card" data-category="men">
+    <div class="product-img-wrap">
+        <img src="images/boston.avif" alt="Jersey">
+        <button class="wishlist-btn"><i class="ti ti-heart"></i></button>
+        <span class="product-badge">New</span>
+    </div>
+    <div class="product-info">
+        <h3>Basketball Jersey</h3>
+        <p class="product-category">Men</p>
+        <p class="product-quantity">Available in stock: 30</p>
+        <div class="product-price">
+            <span class="price">KSh 1,300</span>
+            <span class="original-price">KSh 1,000</span>
+        </div>
+        <button class="add-cart-btn" onclick="addToCart('Basketball Jersey', 1300)">
+            <i class="ti ti-shopping-cart"></i> Add to Cart
+        </button>
+    </div>
+</div>
+
+
+
+        <div class="product-card" data-category="women">
+            <div class="product-img-wrap">
+                <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=80" alt="Blazer">
+                <button class="wishlist-btn"><i class="ti ti-heart"></i></button>
+            </div>
+            <div class="product-info">
+                <h3>Vintage Blazer</h3>
+                <p class="product-category">Women</p>
+                <div class="product-price">
+                    <span class="price">ksh 950</span>
+                    <span class="original-price">ksh 2800</span>
+                </div>
+                <button class="add-cart-btn" onclick="addToCart('Vintage Blazer', 950, event)">
+                    <i class="ti ti-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+
+
+
+
+       <div class="product-card" data-category="men">
+            <div class="product-img-wrap">
+                <img src="images/cargo pants.webp" alt="Cargo Pants">
+                <button class="wishlist-btn"><i class="ti ti-heart"></i></button>
+                <span class="product-badge">Sale</span>
+            </div> 
+            <div class="product-info">
+                <h3>Cargo Pants</h3>
+                <p class="product-category">Men</p>
+                <div class="product-price">
+                    <span class="price">KSh 700</span>
+                    <span class="original-price">KSh 2,000</span>
+                </div>
+                <button class="add-cart-btn" onclick="addToCart('Slim Fit Chinos', 700, event)">
+                    <i class="ti ti-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+        <div class="product-card" data-category="men">
+            <div class="product-img-wrap">
+                <img src="images/miami.avif" alt="caps">
+                <button class="wishlist-btn"><i class="ti ti-heart"></i></button>
+            </div>
+            <div class="product-info">
+                <h3>Caps</h3>
+                <div class="product-price">
+                    <span class="price">ksh 500</span>
+                    <span class="original-price">ksh 1500</span>
+                </div>
+                <button class="add-cart-btn" onclick="addToCart('Kids Casual Set', 500, event)">
+                    <i class="ti ti-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+        <div class="product-card" data-category="accessories">
+            <div class="product-img-wrap">
+                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=80" alt="Bag">
+                <button class="wishlist-btn"><i class="ti ti-heart"></i></button>
+                <span class="product-badge">New</span>
+            </div>
+            <div class="product-info">
+                <h3>Leather HandBag</h3>
+                <p class="product-category">Accessories</p>
+                <div class="product-price">
+                    <span class="price">ksh 1500</span>
+                    <span class="original-price">ksh 4000</span>
+                </div>
+                <button class="add-cart-btn" onclick="addToCart('Leather HandBag', 1500, event)">
+                    <i class="ti ti-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+        <div class="product-card" data-category="kids">
+            <div class="product-img-wrap">
+                <img src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=400&q=80" alt="Kids Shoes">
+                <button class="wishlist-btn"><i class="ti ti-heart"></i></button>
+                <span class="product-badge">Sale</span>
+            </div>
+            <div class="product-info">
+                <h3>Kids Sneakers</h3>
+                <p class="product-category">Kids</p>
+                <div class="product-price">
+                    <span class="price">KSh 600</span>
+                    <span class="original-price">KSh 1,800</span>
+                </div>
+                <button class="add-cart-btn" onclick="addToCart('Kids Sneakers', 600, event)">
+                    <i class="ti ti-shopping-cart"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="how-it-works" id="about">
+    <div class="section-header">
+        <h2>How It Works</h2>
+        <p>Shopping with us is simple and fun</p>
+    </div>
+    <div class="steps-grid">
+        <div class="step-card">
+            <div class="step-icon">🔍</div>
+            <div class="step-num">01</div>
+            <h3>Browse</h3>
+            <p>Explore thousands of curated fashion items across all categories.</p>
+        </div>
+        <div class="step-card">
+            <div class="step-icon">🛒</div>
+            <div class="step-num">02</div>
+            <h3>Shop</h3>
+            <p>Add your favorite pieces to cart and checkout securely.</p>
+        </div>
+        <div class="step-card">
+            <div class="step-icon">📦</div>
+            <div class="step-num">03</div>
+            <h3>Receive</h3>
+            <p>Get your items delivered fast with our reliable shipping.</p>
+        </div>
+    </div>
+</section>
+
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+        <h3>Your Cart</h3>
+        <button onclick="toggleCart()" style="background:none;border:none;cursor:pointer;font-size:20px;color:#999;"><i class="ti ti-x"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+        <p class="cart-empty">Your cart is empty</p>
+    </div>
+    <div class="cart-footer">
+        <div class="cart-total">
+            <span>Total:</span>
+            <strong id="cartTotal">KSh 0</strong>
+        </div>
+        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+</div>
+
+
+<section class="newsletter">
+    <div class="newsletter-content">
+        <h2>Join the East Side Family</h2>
+        <p>Subscribe for exclusive drops, early access to sales, and style tips.</p>
+        <form class="newsletter-form">
+            <input type="email" id="emailInput" placeholder="Enter your email" required>
+            <button type="button" onclick="subscribe()">Subscribe</button>
+        </form>
+        <p class="newsletter-note">No spam, unsubscribe anytime.</p>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <span class="footer-logo-text">East Side</span>
+            <p>Your go-to destination for curated fashion. Quality items at unbeatable prices.</p>
+            <div class="socials">
+                <a href="#"><i class="ti ti-brand-instagram"></i></a>
+                <a href="#"><i class="ti ti-brand-twitter"></i></a>
+                <a href="#"><i class="ti ti-brand-facebook"></i></a>
+                <a href="#"><i class="ti ti-brand-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h4>Shop</h4>
+            <ul>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Kids</a></li>
+                <li><a href="#">Accessories</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <ul class="contact-list">
+                <li><i class="ti ti-mail"></i> hello@eastside.com</li>
+                <li><i class="ti ti-phone"></i> +254 700 000 000</li>
+                <li><i class="ti ti-map-pin"></i> Nairobi, Kenya</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026 East Side. All rights reserved.</span>
+        <span>Designed with ❤️ in Kenya</span>
+    </div>
+</footer>
+<script src="commerce.js"></script>
+</body>
+</html>
